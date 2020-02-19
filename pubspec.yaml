@@ -11,7 +11,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  webview_flutter: ">=0.3.15 <1.0.0"
+  webview_flutter:
+    git:
+      url: git@github.com:pavlosgi/plugins.git
+      path: packages/webview_flutter
 
 dev_dependencies:
   flutter_test:
