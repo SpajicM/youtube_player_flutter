@@ -227,6 +227,9 @@ class _RawYoutubePlayerState extends State<RawYoutubePlayer>
             controller.updateValue(
               controller.value.copyWith(isReady: true),
             );
+          } else {
+            print("reloading video");
+            controller.reload();
           }
         },
       ),
@@ -348,12 +351,12 @@ class _RawYoutubePlayerState extends State<RawYoutubePlayer>
                 player.cueVideoById(id, startAt, endAt);
                 return '';
             }
-            
+
             function loadPlaylist(playlist, index, startAt) {
                 player.loadPlaylist(playlist, 'playlist', index, startAt);
                 return '';
             }
-            
+
             function cuePlaylist(playlist, index, startAt) {
                 player.cuePlaylist(playlist, 'playlist', index, startAt);
                 return '';
@@ -388,7 +391,7 @@ class _RawYoutubePlayerState extends State<RawYoutubePlayer>
                 player.setPlaybackRate(rate);
                 return '';
             }
-            
+
             function setTopMargin(margin) {
                 document.getElementById("player").style.marginTop = margin;
                 return '';
